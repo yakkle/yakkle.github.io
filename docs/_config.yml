@@ -29,7 +29,7 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang:           true
 
-syntax_highlighter_style: github
+syntax_highlighter_style: base16_solarized_dark
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
