@@ -1,4 +1,17 @@
+---
+title: ICX circulation
+author: yakkle
+date: 2022-02-16
+category: Jekyll
+layout: post
+---
+
 # ICX circulation
+
+## foundation addresses
+ - [addresses](https://github.com/geometry-labs/icon-metrics/blob/main/icon_metrics/data/organization-addresses.csv)
+
+## python script
 
 ```python
 from iconsdk.icon_service import IconService
