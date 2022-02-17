@@ -6,8 +6,6 @@ category: Jekyll
 layout: post
 ---
 
-# ICX circulation
-
 ## foundation addresses
  - [addresses](https://github.com/geometry-labs/icon-metrics/blob/main/icon_metrics/data/organization-addresses.csv)
 
