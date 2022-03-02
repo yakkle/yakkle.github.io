@@ -1,4 +1,11 @@
-# GitHub action?
+---
+title: Github Action
+author: yakkle
+date: 2022-03-02
+category: Jekyll
+layout: post
+---
+
 ## CI/CD
  - Continuous Integration and Continuous Delivery
  - automate your build, test and deployment
@@ -112,7 +119,7 @@ jobs:
  - [run locally](https://github.com/nektos/act)
  - [awesome actions](https://github.com/sdras/awesome-actions)
 
----- 
+----
 self learning github action : [learning lab][GitHub Actions: Hello World]
 
 
