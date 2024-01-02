@@ -1,0 +1,39 @@
+site_name: yakkle
+theme:
+  name: material
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  features:
+    - content.code.copy
+    - content.tabs.link
+nav:
+  - 'Home': 'index.md'
+  - 'About': '_pages/about.md'
+  - 'Contact': '_pages/contact.md'
+  - 'Posts':
+    - 'circulation': '_posts/2022-02-16-circulation.md'
+    - 'github action': '_posts/2022-03-02-github-action.md'
+    - 'go ethereum': '_posts/2022-04-4-go-ethereum.md'
+markdown_extensions:
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
