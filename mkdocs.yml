@@ -1,4 +1,4 @@
-site_name: yakkle github page
+site_name: yakkle
 theme:
   name: material
   palette:
@@ -16,9 +16,13 @@ theme:
     - content.code.copy
     - content.tabs.link
 nav:
+  - 'Home': 'index.md'
+  - 'About': '_pages/about.md'
+  - 'Contact': '_pages/contact.md'
   - 'Posts':
-    - 'circulation': 'docs/_posts/2022-02-16-circulation.md'
-    - 'github action': 'docs/_posts/2022-03-02-github-action.md'
+    - 'circulation': '_posts/2022-02-16-circulation.md'
+    - 'github action': '_posts/2022-03-02-github-action.md'
+    - 'go ethereum': '_posts/2022-04-4-go-ethereum.md'
 markdown_extensions:
   - toc:
       permalink: true
