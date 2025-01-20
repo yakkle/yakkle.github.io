@@ -1,0 +1,30 @@
+name: Make Docs
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install dependency
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Deploy yakkle.github.io
+        working-directory: ${{ github.workspace }}
+        run: |
+          echo "::notice:: deploy to gh-pages"
+          GIT_COMMITTER_NAME=yakkle GIT_COMMITTER_EMAIL=yakkle@gmail.com \
+          mkdocs gh-deploy --force
