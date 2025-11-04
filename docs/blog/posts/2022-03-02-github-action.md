@@ -1,15 +1,19 @@
 ---
 title: Github Action
-author: yakkle
-date: 2022-03-02
-category: Jekyll
-layout: post
+authors:
+  - yakkle
+date:
+  created: 2022-03-02
+categories:
+  - CI/CD
+  - Github Action
 ---
 
 ## CI/CD
  - Continuous Integration and Continuous Delivery
  - automate your build, test and deployment
 
+<!-- more -->
 ## Components
  ![image](https://user-images.githubusercontent.com/4245169/147060738-40385522-d469-427d-82b5-2606c25ea057.png)
  - workflow

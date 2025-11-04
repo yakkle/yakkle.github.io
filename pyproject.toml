@@ -1,7 +1,0 @@
-[project]
-name = "yakkle"
-version = "2024.01"
-
-dependencies = [
-  "mkdocs-material~=9.5.3",
-]

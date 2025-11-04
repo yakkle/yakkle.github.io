@@ -1,5 +1,5 @@
-# Build
+# Run on local server
 
 ```shell
-mkdocs gh-deploy --force
+uv run main.py serve
 ```

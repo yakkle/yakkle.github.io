@@ -1,38 +1,69 @@
-site_name: yakkle
+site_name: Favorite Things
 repo_name: yakkle/yakkle.github.io
 repo_url: https://github.com/yakkle/yakkle.github.io
+edit_uri: edit/main/docs/
 theme:
   name: material
   palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/auto-mode
+        name: Switch to dark mode
+
     # Palette toggle for dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
       toggle:
         icon: material/weather-night
         name: Switch to light mode
     # Palette toggle for light mode
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
       toggle:
         icon: material/weather-sunny
-        name: Switch to dark mode
+        name: Switch to system preference
   features:
     - content.code.copy
     - content.tabs.link
-nav:
-  - 'Home': 'index.md'
-  - 'About': '_pages/about.md'
-  - 'Contact': '_pages/contact.md'
-  - 'Posts':
-    - 'circulation': '_posts/2022-02-16-circulation.md'
-    - 'github action': '_posts/2022-03-02-github-action.md'
-    - 'go ethereum': '_posts/2022-04-4-go-ethereum.md'
-    - 'MPC': '_posts/2025-01-20-MPC.md'
+    - content.action.edit
+    - content.action.view
+    - search.suggest
+    - search.share
+    - navigation.top
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.sections
+    - navigation.footer
+    - toc.follow
+plugins:
+  - search
+  - blog
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      timezone: Asia/Seoul
+  - awesome-nav
+
 markdown_extensions:
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+  - abbr
   - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.blocks.caption
+  - pymdownx.magiclink
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -40,5 +71,6 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.blocks.caption
-  - pymdownx.magiclink
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

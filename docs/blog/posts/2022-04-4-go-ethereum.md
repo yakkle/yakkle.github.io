@@ -1,9 +1,13 @@
 ---
 title: Go-ethereum
-author: yakkle
-date: 2022-04-04
-category: Jekyll
-layout: post
+authors:
+  - yakkle
+date:
+    created: 2022-04-04
+categories:
+  - Blockchain
+tags:
+  - Ethereum
 ---
 
 

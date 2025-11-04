@@ -1,9 +1,9 @@
 ---
 title: ICX circulation
 author: yakkle
-date: 2022-02-16
-category: Jekyll
-layout: post
+date:
+  created: 2022-02-16
+draft: true
 ---
 
 ## foundation addresses

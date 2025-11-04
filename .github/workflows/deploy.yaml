@@ -11,20 +11,16 @@ jobs:
       run:
         working-directory: ./
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          cache: pip
-      - name: Install dependency
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
       - name: Deploy yakkle.github.io
         working-directory: ${{ github.workspace }}
         run: |
           echo "::notice:: deploy to gh-pages"
-          GIT_COMMITTER_NAME=yakkle GIT_COMMITTER_EMAIL=yakkle@gmail.com \
-          mkdocs gh-deploy --force
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config http.postBuffer 524288000
+          uv run mkdocs gh-deploy --force
