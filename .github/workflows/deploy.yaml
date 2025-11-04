@@ -23,4 +23,4 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git config http.postBuffer 524288000
-          uv run mkdocs gh-deploy --force
+          uv run main.py gh-deploy --force
