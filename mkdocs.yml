@@ -28,6 +28,7 @@ theme:
         name: Switch to system preference
   features:
     - content.code.copy
+    - content.code.annotate
     - content.tabs.link
     - content.action.edit
     - content.action.view
@@ -65,6 +66,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
