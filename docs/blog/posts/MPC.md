@@ -1,14 +1,13 @@
 ---
-title: MPC(Multi-Party Computation)
 authors:
   - yakkle
 date:
-  created: 2023-12-31
+  created: 2025-01-20
 categories:
   - Blockchain
 ---
 
-# Multi-Party Computation
+# MPC(Multi-Party Computation)
 
 <!-- more -->
 ## MPC 로 평균연봉 구하기

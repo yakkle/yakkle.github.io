@@ -1,5 +1,4 @@
 ---
-title: Github Action
 authors:
   - yakkle
 date:
@@ -8,6 +7,8 @@ categories:
   - CI/CD
   - Github Action
 ---
+
+# Github Action
 
 ## CI/CD
  - Continuous Integration and Continuous Delivery

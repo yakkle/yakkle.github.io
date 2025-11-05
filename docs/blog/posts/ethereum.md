@@ -1,5 +1,4 @@
 ---
-title: Go-ethereum
 authors:
   - yakkle
 date:
@@ -10,6 +9,7 @@ tags:
   - Ethereum
 ---
 
+# Go-ethereum
 
 ## Packages overview
 

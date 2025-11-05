@@ -1,14 +1,13 @@
 ---
-title: Merkle Patricia Tree
 authors:
   - yakkle
 date:
-  created: 2022-02-18
+  created: 2022-02-17
 categories:
   - Blockchain
 ---
 
-##  Merkle Patricia Tree
+#  Merkle Patricia Tree
 
 merkle tree & patricia tree
 
