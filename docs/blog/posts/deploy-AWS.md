@@ -8,7 +8,6 @@ categories:
 tags:
   - CD/CD
   - Github Action
-draft: true
 ---
 
 # github action 으로 AWS EC2 에 배포하기
@@ -40,6 +39,7 @@ Github Action workflow 에서 사용할 Secret 과 환경변수를 설정합니�
 #### Secret
 - `EC2_INSTANCE_ID` : AWS EC2 instance id
 - `ECR_REPOSITORY` : AWS ECR repository 이름
+- `AWS_ROLE_TO_ASSUME`: [AWS credential](https://github.com/aws-actions/configure-aws-credentials?tab=readme-ov-file#quick-start-oidc-recommended)
 
 #### Variable
 - `AWS_REGION` : AWS region 이름(e.g., `ap-northeast-2`)
@@ -49,7 +49,7 @@ Github Action workflow 에서 사용할 Secret 과 환경변수를 설정합니�
 - `DEPLOY_KEY_PATH` : Parameter Store 에서 가져온 deploy key 를 저장할 경로 (e.g., `/run/secrets/deploy_key`)
 
 ## Secret 관리
-배포할 app 에서 사용하는 Secret 정보들을 EC2 에서 안전하게 사용하기 위해 Parameter Store 나 Secret Manager 를 사용한다
+배포할 app 에서 사용하는 Secret 정보들을 EC2 에서 안전하게 사용하기 위해 Parameter Store 를 사용한다
 
 ### AWS Parameter Store
  - [Parameter Store](https://docs.aws.amazon.com/ko_kr/systems-manager/latest/userguide/systems-manager-parameter-store.html)
@@ -58,11 +58,9 @@ Github Action workflow 에서 사용할 Secret 과 환경변수를 설정합니�
 > 암호, 데이터베이스 문자열, Amazon Machine Image(AMI) ID, 라이선스 코드와 같은 데이터를 파라미터 값으로 저장할 수 있습니다.
 > 값을 일반 텍스트 또는 암호화된 데이터로 저장할 수 있습니다.
 
-### AWS Secrets Manager
- - [Secret Manager](https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/intro.html)
-
- > AWS Secrets Manager 를 사용하면 수명 주기 동안 데이터베이스 자격 증명, 애플리케이션 자격 증명, OAuth 토큰,
- > API 키 및 기타 보안 암호를 관리, 검색 및 교체할 수 있습니다.
+!!! tip "AWS Secrets Manager"
+    [AWS Secrets Manager](https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/intro.html) 를 사용하면 수명 주기 동안 데이터베이스 자격 증명, 애플리케이션 자격 증명, OAuth 토큰,
+    API 키 및 기타 보안 암호를 관리, 검색 및 교체할 수 있습니다.
 
 ## build and publish
 배포할 이미지를 build 하고 container registry(ghcr.io) 에 push 합니다.
@@ -158,7 +156,7 @@ jobs:
 #### AWS ECR(Elastic Container Registry)
 - mirroring docker 이미지 저장소
 
-!!! important
+!!! warning
     AWS EC2 에서 ghcr.io 에 private 으로 저장된 image 를 받아오도록 자동화를 해야 하는데,<br>
     자동화를 해결할 우아한 방법이 없기 때문에 AWS ECR 에 mirroring 하는 방법을 선택<br>
     https://github.com/orgs/community/discussions/24636
@@ -250,8 +248,7 @@ jobs:
 ### AWS ssm(Simple System Manager)
 ssm 으로 EC2 에 배포 스크립트를 실행하도록 명령을 보냅니다.
 
-### deploy script with boto3
-- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
+### deploy script with [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 
 ```python
 # /// script
