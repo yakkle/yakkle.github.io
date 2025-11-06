@@ -5,6 +5,8 @@ date:
   created: 2022-03-02
   updated: 2025-11-05
 categories:
+  - DevOps
+tags:
   - CI/CD
   - Github Action
 ---
